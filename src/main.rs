@@ -21,6 +21,9 @@ struct Config {
 
 impl Config {
     fn new(args: &[String]) -> Self {
+        if args.len() < 3 {
+            panic!("at least two arguments are necessary")
+        }
         Self {
             query: args[1].clone(),
             file_path: args[2].clone(),
